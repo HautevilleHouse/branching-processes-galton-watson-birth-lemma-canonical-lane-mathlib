@@ -1,0 +1,17 @@
+import canonicalLaneMathlib.AdmissibleClass
+import HautevilleHouse.BranchingProcessesGaltonWatsonBirthLemma.BirthLemma
+import HautevilleHouse.BranchingProcessesGaltonWatsonBirthLemma.ExtinctionProbability
+import HautevilleHouse.BranchingProcessesGaltonWatsonBirthLemma.MeanOffspring
+import HautevilleHouse.BranchingProcessesGaltonWatsonBirthLemma.KestenStigum
+
+namespace HautevilleHouse
+namespace BranchingProcessesGaltonWatsonBirthLemma
+
+def ConstrainedGaltonWatsonBirthLemmaClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_galton_watson_birth_lemma_endgame (A : AdmissibleClass) : ConstrainedGaltonWatsonBirthLemmaClosure A :=
+  And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end BranchingProcessesGaltonWatsonBirthLemma
+end HautevilleHouse
